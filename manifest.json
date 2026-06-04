@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "YT Scanline Filter",
+  "version": "1.0",
+  "description": "Накладывает зелёный scanline-фильтр на видео YouTube",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["filter.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [{
+    //"resources": ["filter.svg"],
+    "resources": ["filter_col1.svg", "filter_col2.svg", "filter_col3.svg"],
+    "matches": ["*://www.youtube.com/*"]
+  }],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png"
+  }
+}
